@@ -1,7 +1,7 @@
 var __ = erste.locale.__;
 
 class SignIn extends erste.View {
-    constructor() {
+    constructor(vm) {
         super();
 
         this.className = 'signin';
@@ -11,16 +11,12 @@ class SignIn extends erste.View {
             hasMenuButton: true,
             hasBackButton: true
         });
+        this.navBar.vm = vm;
 
     }
 
-    onAfterRender() {
-        this.vm = new erste.ViewManager(this.el);
-        this.navBar.vm = this.vm;
-    };
-
     template_content() {
-        return `${this.navBar}        
+        return `${this.navBar}
 <h4>${__('Login')}<hr></h4>
 <br>
 <div class="div1">
